@@ -1,0 +1,46 @@
+
+.char-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+}
+
+.char-card{
+    width: 300px;
+}
+
+.img-char{
+    width: 350px;
+}
+
+.char-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-name{
+    text-align: center;
+}
+
+.episodes{
+    width: 300px;
+    min-height: 30px;
+    max-height: 240px;
+    overflow-y: scroll;
+}
+
+

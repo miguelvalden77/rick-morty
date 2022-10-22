@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get("/all-characters", [apiCaller::class, "index"] );
 
+Route::get("/character/{id}", [apiCaller::class, "character"] );
+
