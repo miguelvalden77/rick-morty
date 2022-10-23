@@ -22,8 +22,8 @@
             
             <h4>Episodes</h4>
             <section class="episodes">
-                @foreach ($character["episode"] as $episode)
-                    <a href="#">{{$episode}}</a>
+                @foreach ($episodes as $epi)
+                    <a href="/episode/{{$epi}}">{{$epi}}</a>
                 @endforeach
             </section>
 

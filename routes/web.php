@@ -22,3 +22,11 @@ Route::get("/all-characters", [apiCaller::class, "index"] );
 
 Route::get("/character/{id}", [apiCaller::class, "character"] );
 
+Route::get("/locations", [apiCaller::class, "locations"]);
+
+Route::get("/episodes", [apiCaller::class, "episodes"]);
+
+Route::get("/episode/{id}", [apiCaller::class, "getAnEpisode"]);
+
+
+

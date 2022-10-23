@@ -1,22 +1,68 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+:root{
+    --color-primary: rgb(245, 245, 245);
+    --color-secondary: rgb(158, 158, 158);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.p-1{
+    padding: 0.5rem;
+}
+
+.hover:hover{
+    color: chocolate;
+}
+
 .char-container{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    color: var(--color-primary);
+}
+
+.avatar-container{
+    overflow: hidden;
 }
 
 img{
     width: 100%;
+    display: block;
+    transform: scale(1);
+    transition: 0.25s transform linear;
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: 0.25s transform linear;
 }
 
 .char-card{
-    width: 300px;
+    background-color: rgb(60, 62, 68);
+    width: 600px;
+    height: 220px;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.navbar{
+    padding: 2.25rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .img-char{
-    width: 350px;
+    width: 200px;
 }
 
 .char-main{
@@ -43,4 +89,21 @@ img{
     overflow-y: scroll;
 }
 
+.main-episodes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
 
+.body{
+    min-height: 100vh;
+    background-color: rgb(32, 35, 41);
+    font-family: 'Oswald', sans-serif;
+    padding-bottom: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-primary);
+}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>Rick & Morty</title>
 </head>
-<body>
+<body class="body">
 
     <x-navbar></x-navbar>
     
