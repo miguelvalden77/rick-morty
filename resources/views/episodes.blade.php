@@ -1,15 +1,15 @@
 
 <x-layout>
 
-    <h1>Episodes</h1>
+    <h1 class="title hover">Episodes</h1>
 
-    <main class="main-episodes">
+    <main class="main-locations">
 
         @foreach ($episodes as $epi)
 
-            <section>
-                <a href="/episode/{{$epi["id"]}}"><h2>{{$epi["name"]}}</h2></a>
-                <p>{{$epi["air_date"]}}</p>
+            <section class="location-card">
+                <h2 class="description">{{$epi["name"]}}</h2>
+                <p class="hover">{{$epi["air_date"]}}</p>
             </section>
             
         @endforeach

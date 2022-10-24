@@ -1,4 +1,6 @@
 
 <x-layout>
-    <h1>Home</h1>
+    <main class="home">
+        <img class="image" src="./poster.jpg" alt="poster">
+    </main>
 </x-layout>

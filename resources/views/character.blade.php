@@ -2,29 +2,21 @@
 
     <main class="char-main">
 
-        <article class="card-main">
+        <h1 class="hover title">{{ $character["name"] }}</h1>
 
-            <h1 class="name-main">{{ $character["name"] }}</h1>
+        <article class="card-main">
 
             <div class="img-char">
                 <img src="{{$character["image"]}}" alt="foto">
             </div>
 
-        </article>
-
-        <article class="info-main">
-
-            <p>Status: {{$character["status"]}}</p>
-            <p>Specie: {{$character["species"]}}</p>
-            <p>Gender: {{$character["gender"]}}</p>
-            <p>Location: {{$character["location"]["name"]}}</p>
-            <p>Origin: {{$character["origin"]["name"]}}</p>
-            
-            <h4>Episodes</h4>
-            <section class="episodes">
-                @foreach ($episodes as $epi)
-                    <a href="/episode/{{$epi}}">{{$epi}}</a>
-                @endforeach
+            <section class="info-main">
+                <p class="p-2">{{$character["status"]}}, {{$character["species"]}}</p>
+                <p class="p-2">{{$character["gender"]}}</p>
+                <span class="type">Location</span>
+                <p class="p-2">{{$character["location"]["name"]}}</p>
+                <span class="type">Origin</span>
+                <p class="p-2">{{$character["origin"]["name"]}}</p>
             </section>
 
         </article>

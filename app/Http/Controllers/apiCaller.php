@@ -6,19 +6,29 @@ use Illuminate\Http\Request;
 
 class apiCaller extends Controller
 {
-    public function index(){
+    public function index($page, $item = 1){
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://rickandmortyapi.com/api/character");
+        if($item == 1){
+            $url = "https://rickandmortyapi.com/api/character?page={$page}";
+        }
+        else{
+            $url = "https://rickandmortyapi.com/api/character";
+        }
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);
         curl_close($ch);
 
         $characters = json_decode($response, TRUE);
         
-        
+        $num = explode("=", $characters["info"]["next"])[1];
 
-        return view("allCharacters")->with(["characters" => $characters["results"]]);
+        return view("allCharacters")->with([
+            "characters" => $characters["results"],
+            "page" => $characters["info"],
+            "num" => $num
+        ]);
 
     }
 
@@ -45,17 +55,30 @@ class apiCaller extends Controller
         return view("character")->with(["character" => $character, "episodes" => $episodes]);
     }
 
-    public function locations(){
+    public function locations($page, $item = 1){
+
+        if($item == 1){
+            $url = "https://rickandmortyapi.com/api/location?page={$page}";
+        }
+        else{
+            $url = "https://rickandmortyapi.com/api/location";
+        }
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://rickandmortyapi.com/api/location");
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);
         curl_close($ch);
 
         $locations = json_decode($response, TRUE);
 
-        return view("locations")->with(["locations" => $locations["results"]]);
+        $num = explode("=", $locations["info"]["next"])[1];
+
+        return view("locations")->with([
+            "locations" => $locations["results"],
+            "num" => $num,
+            "page" => $locations["info"]
+        ]);
     }
 
     public function episodes(){

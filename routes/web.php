@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/all-characters", [apiCaller::class, "index"] );
+Route::get("/all-characters/{page?}", [apiCaller::class, "index"] );
 
 Route::get("/character/{id}", [apiCaller::class, "character"] );
 
-Route::get("/locations", [apiCaller::class, "locations"]);
+Route::get("/locations/{page?}", [apiCaller::class, "locations"]);
 
 Route::get("/episodes", [apiCaller::class, "episodes"]);
 
