@@ -81,17 +81,30 @@ class apiCaller extends Controller
         ]);
     }
 
-    public function episodes(){
+    public function episodes($page, $item = 1){
+
+        if($item == 1){
+            $url = "https://rickandmortyapi.com/api/episode?page={$page}";
+        }
+        else{
+            $url = "https://rickandmortyapi.com/api/episode";
+        }
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://rickandmortyapi.com/api/episode");
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);
         curl_close($ch);
 
         $episodes = json_decode($response, TRUE);
 
-        return view("episodes")->with(["episodes" => $episodes["results"]]);
+        $num = explode("=", $episodes["info"]["next"])[1];
+
+        return view("episodes")->with([
+            "episodes" => $episodes["results"],
+            "num" => $num,
+            "page" => $episodes["info"] 
+        ]);
     }
 
     public function getAnEpisode($id){

@@ -14,6 +14,16 @@
             
         @endforeach
 
+        <section class="button-container">
+            @if ($page["prev"])
+                <a href="/locations/{{$num - 2}}"><button class="button hover">Previous page</button></a>
+            @endif
+                <button class="button hover">Current page {{$num - 1}}</button>
+            @if ($page["next"])
+                <a href="/locations/{{$num}}"><button class="button hover">Next page {{$num}}</button></a>
+            @endif
+        </section>
+
     </main>
 
 

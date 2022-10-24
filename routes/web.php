@@ -24,7 +24,7 @@ Route::get("/character/{id}", [apiCaller::class, "character"] );
 
 Route::get("/locations/{page?}", [apiCaller::class, "locations"]);
 
-Route::get("/episodes", [apiCaller::class, "episodes"]);
+Route::get("/episodes/{page?}", [apiCaller::class, "episodes"]);
 
 Route::get("/episode/{id}", [apiCaller::class, "getAnEpisode"]);
 
