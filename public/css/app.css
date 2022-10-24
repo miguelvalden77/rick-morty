@@ -130,6 +130,36 @@ img:hover{
     z-index: 10;
 }
 
+@media screen and (max-width: 980PX) {
+    .navbar{
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 820PX) {
+    .navbar{
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 730PX) {
+    .navbar{
+        left: 26%;
+    }
+}
+
+@media screen and (max-width: 640PX) {
+    .navbar{
+        left: 24%;
+    }
+}
+
+@media screen and (max-width: 560PX) {
+    .navbar{
+        left: 22%;
+    }
+}
+
 .img-char{
     width: 100%;
     overflow: hidden;

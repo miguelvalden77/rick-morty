@@ -22,6 +22,8 @@
             <button class="button hover">Current page {{$num - 1}}</button>
         @if ($page["next"])
             <a href="/locations/{{$num}}"><button class="button hover">Next page {{$num}}</button></a>
+        @else
+            <div></div>
         @endif
     </section>
 

@@ -71,7 +71,7 @@ class apiCaller extends Controller
         curl_close($ch);
 
         $locations = json_decode($response, TRUE);
-
+        
         $num = explode("=", $locations["info"]["next"])[1];
 
         return view("locations")->with([
