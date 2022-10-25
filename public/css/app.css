@@ -154,9 +154,15 @@ img:hover{
     }
 }
 
-@media screen and (max-width: 560PX) {
+@media screen and (max-width: 580PX) {
     .navbar{
-        left: 22%;
+        left: 21%;
+    }
+}
+
+@media screen and (max-width: 530PX) {
+    .navbar{
+        left: 18%;
     }
 }
 
@@ -188,6 +194,16 @@ img:hover{
     border-radius: 8px;
     overflow: hidden;
     gap: 1rem;
+}
+
+@media screen and (max-width: 640PX) {
+    .card-main{
+        width: 500px;
+    }
+
+    .char-card{
+        width: 480px;
+    }
 }
 
 .name-main{

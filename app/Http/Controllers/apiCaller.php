@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class apiCaller extends Controller
 {
-    public function index($page, $item = 1){
+    public function index($page = 1){
 
         $ch = curl_init();
-        if($item == 1){
-            $url = "https://rickandmortyapi.com/api/character?page={$page}";
+        if($page == 1){
+            $url = "https://rickandmortyapi.com/api/character";
         }
         else{
-            $url = "https://rickandmortyapi.com/api/character";
+            $url = "https://rickandmortyapi.com/api/character?page={$page}";
         }
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -21,8 +21,12 @@ class apiCaller extends Controller
         curl_close($ch);
 
         $characters = json_decode($response, TRUE);
-        
-        $num = explode("=", $characters["info"]["next"])[1];
+
+        if($characters["info"]["next"] !== null){
+            $num = explode("=", $characters["info"]["next"])[1];
+        } else {
+            $num = explode("=", $characters["info"]["prev"])[1] + 2;
+        }
 
         return view("allCharacters")->with([
             "characters" => $characters["results"],
@@ -55,13 +59,13 @@ class apiCaller extends Controller
         return view("character")->with(["character" => $character, "episodes" => $episodes]);
     }
 
-    public function locations($page, $item = 1){
+    public function locations($page = 1){
 
-        if($item == 1){
-            $url = "https://rickandmortyapi.com/api/location?page={$page}";
+        if($page == 1){
+            $url = "https://rickandmortyapi.com/api/location";
         }
         else{
-            $url = "https://rickandmortyapi.com/api/location";
+            $url = "https://rickandmortyapi.com/api/location?page={$page}";
         }
 
         $ch = curl_init();
@@ -72,7 +76,11 @@ class apiCaller extends Controller
 
         $locations = json_decode($response, TRUE);
         
-        $num = explode("=", $locations["info"]["next"])[1];
+        if($locations["info"]["next"] !== null){
+            $num = explode("=", $locations["info"]["next"])[1];
+        } else {
+            $num = explode("=", $locations["info"]["prev"])[1] + 2;
+        }
 
         return view("locations")->with([
             "locations" => $locations["results"],
@@ -81,13 +89,13 @@ class apiCaller extends Controller
         ]);
     }
 
-    public function episodes($page, $item = 1){
+    public function episodes($page = 1){
 
-        if($item == 1){
-            $url = "https://rickandmortyapi.com/api/episode?page={$page}";
+        if($page == 1){
+            $url = "https://rickandmortyapi.com/api/episode";
         }
         else{
-            $url = "https://rickandmortyapi.com/api/episode";
+            $url = "https://rickandmortyapi.com/api/episode?page={$page}";
         }
 
         $ch = curl_init();
@@ -98,7 +106,11 @@ class apiCaller extends Controller
 
         $episodes = json_decode($response, TRUE);
 
-        $num = explode("=", $episodes["info"]["next"])[1];
+        if($episodes["info"]["next"] !== null){
+            $num = explode("=", $episodes["info"]["next"])[1];
+        } else {
+            $num = explode("=", $episodes["info"]["prev"])[1] + 2;
+        }
 
         return view("episodes")->with([
             "episodes" => $episodes["results"],
