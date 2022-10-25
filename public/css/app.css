@@ -196,6 +196,32 @@ img:hover{
     gap: 1rem;
 }
 
+.button-char{
+    display: flex;
+    margin: auto;
+    gap: 2.5rem;
+    padding-top: 2rem;
+}
+
+.button-char button{
+    padding: 1rem;
+    border-radius: 50px;
+    width: 170px;
+    font-family: 'Oswald', sans-serif;
+    color: chocolate;
+    font-size: 1.1rem;
+    border: none;
+    background-color: rgb(60, 62, 68);
+    transform: scale(1);
+    transition: 0.3s transform linear;
+    cursor: pointer;
+}
+
+.button-char button:hover{
+    transform: scale(1.1);
+    transition: 0.3s transform linear;
+}
+
 /* .card-main::after{
     content: " ";
     width: 40px;

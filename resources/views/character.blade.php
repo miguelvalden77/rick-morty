@@ -19,7 +19,17 @@
                 <p class="p-2">{{$character["origin"]["name"]}}</p>
             </section>
 
+            
         </article>
+        
+        <section class="button-char">
+            @if ($character["id"] > 1)    
+                <a href="/character/{{$character["id"] - 1}}"><button>Previous character</button></a>
+            @endif
+            @if ($character["id"] < 826)
+                <a href="/character/{{$character["id"] + 1}}"><button>Next character</button></a>
+            @endif
+        </section>
 
     </main>
 
