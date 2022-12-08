@@ -125,45 +125,7 @@ img:hover{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    position: absolute;
-    left: 34%;
     z-index: 10;
-}
-
-@media screen and (max-width: 980PX) {
-    .navbar{
-        left: 30%;
-    }
-}
-
-@media screen and (max-width: 820PX) {
-    .navbar{
-        left: 28%;
-    }
-}
-
-@media screen and (max-width: 730PX) {
-    .navbar{
-        left: 26%;
-    }
-}
-
-@media screen and (max-width: 640PX) {
-    .navbar{
-        left: 24%;
-    }
-}
-
-@media screen and (max-width: 580PX) {
-    .navbar{
-        left: 21%;
-    }
-}
-
-@media screen and (max-width: 530PX) {
-    .navbar{
-        left: 18%;
-    }
 }
 
 .img-char{
@@ -300,4 +262,10 @@ a{
 .button:hover{
     transform: scale(1.1);
     transition: 0.3s transform linear;
+}
+
+img.image{
+    position: absolute;
+    top: 0;
+    z-index: -5;
 }
