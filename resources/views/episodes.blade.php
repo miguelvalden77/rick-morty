@@ -19,11 +19,11 @@
     
     <section class="button-container">
         @if ($page["prev"])
-            <a href="/episodes/{{$num - 2}}"><button class="button hover">Previous page {{$num - 2}}</button></a>
+            <a href="/episodes/{{$num - 2}}"><button class="button hover">Previous {{$num - 2}}</button></a>
         @endif
-            <button class="button hover">Current page {{$num - 1}}</button>
+            <button class="button hover">{{$num - 1}}</button>
         @if ($page["next"])
-            <a href="/episodes/{{$num}}"><button class="button hover">Next page {{$num}}</button></a>
+            <a href="/episodes/{{$num}}"><button class="button hover">Next {{$num}}</button></a>
         @endif
     </section>
 

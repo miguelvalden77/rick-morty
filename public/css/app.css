@@ -1,25 +1,24 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
 
-:root{
+:root {
     --color-primary: rgb(245, 245, 245);
     --color-secondary: rgb(158, 158, 158);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.p-1{
+.p-1 {
     padding: 0.5rem;
 }
 
-.p-2{
+.p-2 {
     padding-bottom: 0.4rem;
 }
 
-.info-main{
+.info-main {
     background-color: rgb(60, 62, 68);
     border-radius: 8px;
     color: white;
@@ -31,30 +30,29 @@
     gap: 0.1rem;
 }
 
-.home{
-    height: 100vh;
+.home {
     overflow: hidden;
 }
 
-.image{
-    height: 100%;
+.image {
+    height: 100vh;
 }
 
-.image:hover{
+.image:hover {
     transform: scale(1);
-}       
+}
 
-.description{
+.description {
     color: chocolate;
     transition: color 0.3s linear;
 }
 
-.description:hover{
+.description:hover {
     color: white;
     transition: color 0.3s linear;
 }
 
-.location-card{
+.location-card {
     background-color: rgb(60, 62, 68);
     border-radius: 8px;
     width: 200px;
@@ -62,8 +60,8 @@
     padding: 0.5rem;
 }
 
-.title{
-    text-align: center; 
+.title {
+    text-align: center;
     color: white;
     padding-top: 1rem;
     transition: color 0.3s;
@@ -71,18 +69,18 @@
 }
 
 @media screen and (max-width: 640px) {
-    .card-main{
+    .card-main {
         display: flex;
         flex-direction: column;
     }
 }
 
-.hover:hover{
+.hover:hover {
     color: chocolate;
     transition: color 0.7s;
 }
 
-.char-container{
+.char-container {
     padding-top: 6rem;
     display: flex;
     flex-wrap: wrap;
@@ -92,12 +90,16 @@
     color: var(--color-primary);
 }
 
-.avatar-container{
+.avatar-container {
     overflow: hidden;
 }
 
+.avatar-container img {
+    height: 100%;
+}
+
 @media screen and (min-width: 640px) {
-    .avatar-container{
+    .avatar-container {
         width: 240px;
     }
 }
@@ -111,24 +113,47 @@ html {
     scrollbar-arrow-color: #000;
     scrollbar-shadow-color: #646464;
     scrollbar-dark-shadow-color: #646464;
-  }
-  
-  ::-webkit-scrollbar { width: 8px; height: 3px;}
-  ::-webkit-scrollbar-button {  background-color: inherit; }
-  ::-webkit-scrollbar-track {  background-color: #646464;}
-  ::-webkit-scrollbar-track-piece { background-color: inherit;}
-  ::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-  ::-webkit-scrollbar-corner { background-color: inherit;}
-  ::-webkit-resizer { background-color: #666;}
+}
 
-img{
+::-webkit-scrollbar {
+    width: 8px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: inherit;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #646464;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #666;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: inherit;
+}
+
+::-webkit-resizer {
+    background-color: #666;
+}
+
+img {
     width: 100%;
     display: block;
     transform: scale(1);
     transition: 0.25s transform linear;
 }
 
-.main-locations{
+.main-locations {
     display: flex;
     justify-content: center;
     color: white;
@@ -137,12 +162,12 @@ img{
     gap: 1.5rem;
 }
 
-img:hover{
+img:hover {
     transform: scale(1.1);
     transition: 0.25s transform linear;
 }
 
-.char-card{
+.char-card {
     background-color: rgb(60, 62, 68);
     width: 560px;
     height: 220px;
@@ -152,7 +177,7 @@ img:hover{
     gap: 1rem;
 }
 
-.navbar{
+.navbar {
     padding: 2.25rem;
     display: flex;
     justify-content: center;
@@ -160,18 +185,18 @@ img:hover{
     z-index: 10;
 }
 
-.img-char{
+.img-char {
     width: 100%;
     overflow: hidden;
     flex-basis: 50%;
 }
 
-.img-char img{
+.img-char img {
     width: 100%;
     height: 100%;
 }
 
-.char-main{
+.char-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,11 +204,11 @@ img:hover{
     flex-direction: column;
 }
 
-.type{
+.type {
     color: rgb(143, 142, 142);
 }
 
-.card-main{
+.card-main {
     display: flex;
     justify-content: flex-start;
     color: var(--color-primary);
@@ -195,14 +220,14 @@ img:hover{
     gap: 1rem;
 }
 
-.button-char{
+.button-char {
     display: flex;
     margin: auto;
     gap: 2.5rem;
     padding-top: 2rem;
 }
 
-.button-char button{
+.button-char button {
     padding: 1rem;
     border-radius: 50px;
     width: 170px;
@@ -216,7 +241,7 @@ img:hover{
     cursor: pointer;
 }
 
-.button-char button:hover{
+.button-char button:hover {
     transform: scale(1.1);
     transition: 0.3s transform linear;
 }
@@ -233,54 +258,63 @@ img:hover{
 } */
 
 @media screen and (max-width: 640PX) {
-    .card-main{
+    .card-main {
         width: 300px;
         gap: 0;
         height: 390px;
     }
 
-    .char-card{
+    .button {
+        width: 100px;
+    }
+
+    .char-card {
         width: 450px;
     }
 }
 
 @media screen and (max-width: 530px) {
-    .char-card{
-        width: 380px;
+    .char-card {
+        width: 320px;
+    }
+
+    .button {
+        width: 100px;
     }
 }
-.name-main{
+
+.name-main {
     text-align: center;
     padding-bottom: 0.75rem;
 }
 
-.episodes{
+.episodes {
     width: 300px;
     min-height: 30px;
     max-height: 240px;
     overflow-y: scroll;
 }
 
-.main-episodes{
+.main-episodes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
 }
 
-.body{
+.body {
     min-height: 100vh;
     background-color: rgb(32, 35, 41);
     font-family: 'Oswald', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--color-primary);
 }
 
 
-.button-container{
+.button-container {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -288,10 +322,10 @@ a{
     padding: 1.25rem;
 }
 
-.button{
+.button {
     display: block;
     padding: 0.6rem 0.75rem;
-    width: 130px;
+    width: 110px;
     font-family: 'Oswald', sans-serif;
     font-size: 1rem;
     border-radius: 8px;
@@ -303,12 +337,12 @@ a{
     transition: 0.3s transform;
 }
 
-.button:hover{
+.button:hover {
     transform: scale(1.1);
     transition: 0.3s transform linear;
 }
 
-img.image{
+img.image {
     position: absolute;
     top: 0;
     z-index: -5;
